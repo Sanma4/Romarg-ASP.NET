@@ -12,9 +12,9 @@ namespace Dominio
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public string UrlImage { get; set; }
-        public Tipo IdTipo { get; set; }
-        public Bodega IdBodega { get; set; }
-        public DateTime Año { get; set; }
+        public Tipo Tipo { get; set; }
+        public Bodega Bodega { get; set; }
+        public DateTime Anio { get; set; }
         public bool Activo { get; set; }
     }
 }

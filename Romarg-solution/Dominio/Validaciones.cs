@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Bodega
+    public class Validaciones
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
+        public static string ManejoError(object ex)
+        {
+            return ex.ToString();
+        }
     }
 }

@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\ListaVinos.aspx" />
+    <Content Include="Default\Error.aspx" />
     <Content Include="Default\Home.aspx" />
     <Content Include="Login\Login.aspx" />
     <Content Include="Login\Register.aspx" />
@@ -81,12 +82,26 @@
     <Compile Include="Admin\ListaVinos.aspx.designer.cs">
       <DependentUpon>ListaVinos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Default\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.Master.cs">
+      <DependentUpon>Home.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.Master.designer.cs">
+      <DependentUpon>Home.Master</DependentUpon>
     </Compile>
     <Compile Include="Login\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -112,6 +127,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Home.Master" />
     <None Include="packages.config" />
     <Content Include="Site.Master" />
     <None Include="Web.Debug.config">
@@ -125,6 +141,14 @@
     <ProjectReference Include="..\AcessoDatos\AcessoDatos.csproj">
       <Project>{b22b82a4-2229-4e71-88be-f445cd3e3e04}</Project>
       <Name>AcessoDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dominio\Dominio.csproj">
+      <Project>{447bbea5-9f81-4a01-b07f-f98c10beda2e}</Project>
+      <Name>Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{b7af45a2-644f-44c6-871b-6c4fc53e4fdc}</Project>
+      <Name>Negocio</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

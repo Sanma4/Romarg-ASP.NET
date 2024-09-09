@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Bodega.cs" />
     <Compile Include="Tipo.cs" />
+    <Compile Include="Validaciones.cs" />
     <Compile Include="Vinos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
