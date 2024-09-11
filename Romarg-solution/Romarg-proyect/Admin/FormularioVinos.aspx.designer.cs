@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Romarg_proyect.Default
+namespace Romarg_proyect.Admin
 {
 
 
-    public partial class Home
+    public partial class FormularioVinos
     {
     }
 }

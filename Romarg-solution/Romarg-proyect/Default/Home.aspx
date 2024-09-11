@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="carouselExample" class="carousel slide">
+    <div id="carouselExample" class="carousel slide mb-3">
         <div class="carousel-inner" style="width: 100%; height: 600px;">
             <div class="carousel-item active">
                 <img src="https://www.finedininglovers.com/es/sites/g/files/xknfdk1706/files/2023-10/Vinos%20tintos%20dulces.jpg" class="d-block w-100" alt="...">
@@ -25,20 +25,39 @@
         </button>
     </div>
     <hr />
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <asp:Repeater runat="server" ID="repRepetidor">
-            <ItemTemplate>
-                <div class="col">
-                    <div class="card">
-                        <img src="<%#Eval("UrlImage") %>" class="card-img-top" alt="Vino">
-                        <div class="card-body">
-                            <h5 class="card-title"><%#Eval("Nombre") %></h5>
-                            <p class="card-text"><%#Eval("Descripcion") %></p>
-                            <asp:Button ID="btnEjemplo" runat="server" CssClass="btn btn-dark" Text="Ejemplo" CommandArgument='<%#Eval("Id") %>' CommandName="VinosId" />
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <%--            <asp:Repeater runat="server" ID="repRepetidor">
+                <ItemTemplate>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="<%#Eval("UrlImage") %>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"><%#Eval("Nombre") %></h5>
+                                <p class="card-text"><%#Eval("Descripcion") %></p>
+                            </div>
                         </div>
                     </div>
+                </ItemTemplate>
+            </asp:Repeater>--%>
+            <%
+                foreach (Dominio.Vinos vino in ListaVinos)
+                {
+            %>
+            <div class="col">
+                <div class="card">
+                    <img src="<%:vino.UrlImage %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%:vino.Nombre %></h5>
+                        <p class="card-text"><%:vino.Descripcion %></p>
+                        <a href="DetallePokemon.aspx?id=" <%:vino.Id %> class="btn btn-dark">Ver detalle</a>
+                    </div>
                 </div>
-            </ItemTemplate>
-        </asp:Repeater>
+            </div>
+
+            <%
+                }
+            %>
+        </div>
     </div>
 </asp:Content>

@@ -20,5 +20,19 @@ namespace Romarg_proyect.Admin
                 dgvVinos.DataBind();
             }
         }
+
+        protected void dgvVinos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string id = dgvVinos.SelectedDataKey.Value.ToString();
+            Response.Redirect("FormularioVinos.aspx?id=" + id, false);
+        }
+
+
+
+        protected void dgvVinos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            dgvVinos.PageIndex = e.NewPageIndex;
+            dgvVinos.DataBind();
+        }
     }
 }

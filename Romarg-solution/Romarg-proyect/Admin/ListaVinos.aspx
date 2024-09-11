@@ -4,7 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:GridView runat="server" ID="dgvVinos" CssClass="table border-dark table-borderless" AutoGenerateColumns="false"
-        AllowPaging="true" PageSize="8">
+        AllowPaging="true" PageSize="8" OnSelectedIndexChanged="dgvVinos_SelectedIndexChanged"
+        OnPageIndexChanging="dgvVinos_PageIndexChanging" DataKeyNames="id">
         <Columns>
             <asp:BoundField HeaderText="Nombre" DataField="Nombre"/>
             <asp:BoundField HeaderText="Año" DataField="Anio"/>
