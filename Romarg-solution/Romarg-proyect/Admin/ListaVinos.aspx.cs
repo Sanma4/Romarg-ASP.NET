@@ -32,6 +32,7 @@ namespace Romarg_proyect.Admin
         protected void dgvVinos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             dgvVinos.PageIndex = e.NewPageIndex;
+            dgvVinos.DataSource = Session["listaVinos"];
             dgvVinos.DataBind();
         }
     }

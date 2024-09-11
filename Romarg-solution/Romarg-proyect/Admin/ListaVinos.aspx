@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:GridView runat="server" ID="dgvVinos" CssClass="table border-dark table-borderless" AutoGenerateColumns="false"
+    <asp:GridView runat="server" ID="dgvVinos" CssClass="table table-bordered border-dark table-group-divider" AutoGenerateColumns="false"
         AllowPaging="true" PageSize="8" OnSelectedIndexChanged="dgvVinos_SelectedIndexChanged"
         OnPageIndexChanging="dgvVinos_PageIndexChanging" DataKeyNames="id">
         <Columns>
@@ -15,4 +15,6 @@
             <asp:CommandField HeaderText="Acciones" ShowSelectButton="true" SelectText="✍️"/>
         </Columns>
     </asp:GridView>
+     
+    <a href="FormularioVinos2.aspx" class="btn btn-success">Agregar</a>
 </asp:Content>

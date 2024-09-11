@@ -11,8 +11,17 @@ namespace Romarg_proyect.Admin
 {
 
 
-    public partial class FormularioVinos
+    public partial class FormularioVinos2
     {
+
+        /// <summary>
+        /// Control TxtId.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtId;
 
         /// <summary>
         /// Control txtNombre.
@@ -76,5 +85,14 @@ namespace Romarg_proyect.Admin
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image PreloadImg;
+
+        /// <summary>
+        /// Control btnAceptar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAceptar;
     }
 }
