@@ -68,7 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\FormularioVinos.aspx" />
-    <Content Include="Admin\FormularioVinos2.aspx" />
     <Content Include="Admin\ListaVinos.aspx" />
     <Content Include="Default\Error.aspx" />
     <Content Include="Default\Home.aspx" />
@@ -84,13 +83,6 @@
     </Compile>
     <Compile Include="Admin\FormularioVinos.aspx.designer.cs">
       <DependentUpon>FormularioVinos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\FormularioVinos2.aspx.cs">
-      <DependentUpon>FormularioVinos2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\FormularioVinos2.aspx.designer.cs">
-      <DependentUpon>FormularioVinos2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ListaVinos.aspx.cs">
       <DependentUpon>ListaVinos.aspx</DependentUpon>
