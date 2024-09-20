@@ -44,10 +44,36 @@
 
         </div>
     </div>
-    <div class="row">
+    <div class="row mb-3">
         <div class="col-4">
             <asp:Button Text="Aceptar" runat="server" ID="btnAceptar" OnClick="btnAceptar_Click" CssClass="btn btn-outline-success" />
             <a href="ListaVinos.aspx" class="btn btn-outline-dark">Cancelar</a>
+            <%if (BotonDesactivar)
+                { %>
+            <asp:Button Text="Desactivar" ID="btnDesactivar" CssClass="btn btn-warning" runat="server"  OnClick="btnDesactivar_Click"/>
+
+            <%} %>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <asp:TextBox runat="server" ID="txtAgregarBodega" CssClass="form-control  mb-3" placeholder="Ingrese la bodega" />
+            <asp:DropDownList runat="server" ID="ddlAgregarBodega" CssClass="form-control">
+            </asp:DropDownList>
+        </div>
+        <div class="col-4">
+            <asp:Button Text="Agregar Bodega" ID="btnAgregarBodega" CssClass="btn btn-primary mb-3" runat="server" OnClick="btnAgregarBodega_Click" />
+            <br />
+            <asp:Button Text="Eliminar bodega" ID="btnEliminarBodega" runat="server" CssClass="btn btn-danger" OnClick="btnEliminarBodega_Click" />
+            <br />
+            <%if (ConfirmarEliminacion)
+                {%>
+            <asp:CheckBox runat="server" ID="chkEliminar" />
+
+            <asp:Label Text="¿Desea eliminar esta bodega?" runat="server" />
+            <asp:Button Text="Cancelar" runat="server" CssClass="btn btn-outline-dark" ID="btnCancelar" OnClick="btnCancelar_Click" />
+            <% } %>
         </div>
     </div>
 </asp:Content>

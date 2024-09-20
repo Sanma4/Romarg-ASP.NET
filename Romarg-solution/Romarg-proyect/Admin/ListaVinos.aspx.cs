@@ -10,14 +10,18 @@ namespace Romarg_proyect.Admin
 {
     public partial class ListaVinos : System.Web.UI.Page
     {
+    
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!IsPostBack)
             {
+                BodegaNegocio bodegaNegocio = new BodegaNegocio();
                 VinosNegocio negocio = new VinosNegocio();
                 Session.Add("listaVinos", negocio.ListarSP());
                 dgvVinos.DataSource = Session["listaVinos"];
                 dgvVinos.DataBind();
+
             }
         }
 
@@ -35,5 +39,7 @@ namespace Romarg_proyect.Admin
             dgvVinos.DataSource = Session["listaVinos"];
             dgvVinos.DataBind();
         }
+
+      
     }
 }

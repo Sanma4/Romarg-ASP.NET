@@ -46,7 +46,7 @@
             %>
             <div class="col">
                 <div class="card">
-                    <img src="<%:vino.UrlImage %>" class="card-img-top" alt="...">
+                    <img src="<%:vino.UrlImage %>" class="card-img-top" style="width:auto; height: 350px;" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><%:vino.Nombre %></h5>
                         <p class="card-text"><%:vino.Descripcion %></p>

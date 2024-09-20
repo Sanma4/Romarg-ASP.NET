@@ -11,30 +11,33 @@ namespace Romarg_proyect.Admin
 {
     public partial class FormularioVinos2 : System.Web.UI.Page
     {
+        public bool ConfirmarEliminacion { get; set; }
+        public bool BotonDesactivar { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             BodegaNegocio BodegaNegocio = new BodegaNegocio();
             TipoNegocio tipoNegocio = new TipoNegocio();
             try
             {
+                BotonDesactivar = false;
                 if (!IsPostBack)
                 {
-                    ddlBodega.DataSource = BodegaNegocio.listarSP();
-                    ddlBodega.DataValueField = "Id";
-                    ddlBodega.DataTextField = "Nombre";
-                    ddlBodega.DataBind();
+
+                    CargarDdl();
 
                     ddlTipo.DataSource = tipoNegocio.listarSP();
                     ddlTipo.DataValueField = "Id";
                     ddlTipo.DataTextField = "Descripcion";
                     ddlTipo.DataBind();
+
                 }
-                
-                string id = Request.QueryString["id"] != null ?  Request.QueryString["id"].ToString() : "";
-                if(id != "" && !IsPostBack)
+
+                string id = Request.QueryString["id"] != null ? Request.QueryString["id"].ToString() : "";
+                if (id != "" && !IsPostBack)
                 {
                     VinosNegocio negocio = new VinosNegocio();
                     Vinos seleccionado = (negocio.ListarSP(id))[0];
+
 
                     Session.Add("vinoSeleccionado", seleccionado);
 
@@ -48,6 +51,9 @@ namespace Romarg_proyect.Admin
                     ddlTipo.SelectedValue = seleccionado.Tipo.Id.ToString();
                     txtUrlImage_TextChanged(sender, e);
 
+                    BotonDesactivar = true;
+                    if (!seleccionado.Activo)
+                        btnDesactivar.Text = "Activar";
                 }
 
             }
@@ -95,6 +101,89 @@ namespace Romarg_proyect.Admin
             catch (Exception ex)
             {
                 Session.Add("error", Validacion.ValidarVacio(ex));
+                Response.Redirect("..\\Default\\Error.aspx");
+            }
+        }
+        protected void btnAgregarBodega_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                BodegaNegocio negocio = new BodegaNegocio();
+                negocio.AgregarBodega(txtAgregarBodega.Text);
+                CargarDdl();
+            }
+            catch (Exception ex)
+            {
+                Session.Add("Error", Validacion.ValidarVacio(ex.ToString()));
+                Response.Redirect("..\\Default\\Error.aspx");
+            }
+        }
+
+        protected void btnEliminarBodega_Click(object sender, EventArgs e)
+        {
+            ConfirmarEliminacion = true;
+            try
+            {
+                if (chkEliminar.Checked)
+                {
+                    BodegaNegocio negocio = new BodegaNegocio();
+                    negocio.EliminarBodega(int.Parse(ddlAgregarBodega.SelectedValue));
+                    CargarDdl();
+                    ConfirmarEliminacion = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Session.Add("Error", Validacion.ValidarVacio(ex.ToString()));
+                Response.Redirect("..\\Default\\Error.aspx");
+            }
+        }
+
+        public void CargarDdl()
+        {
+            BodegaNegocio negocio = new BodegaNegocio();
+            try
+            {
+                ddlAgregarBodega.DataSource = negocio.listarSP();
+                ddlAgregarBodega.DataValueField = "Id";
+                ddlAgregarBodega.DataTextField = "Nombre";
+                ddlAgregarBodega.DataBind();
+
+                ddlBodega.DataSource = negocio.listarSP();
+                ddlBodega.DataValueField = "Id";
+                ddlBodega.DataTextField = "Nombre";
+                ddlBodega.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Session.Add("Error", Validacion.ValidarVacio(ex.ToString()));
+                Response.Redirect("..\\Default\\Error.aspx");
+            }
+
+        }
+
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            ConfirmarEliminacion = false;
+        }
+
+        protected void btnDesactivar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                VinosNegocio negocio = new VinosNegocio();
+                Vinos seleccionado = new Vinos();
+                seleccionado = (Vinos)Session["vinoSeleccionado"];
+                negocio.DesactivarVino(seleccionado.Id, !seleccionado.Activo);
+                Response.Redirect("ListaVinos.aspx", false);
+
+
+            }
+            catch (Exception ex)
+            {
+                Session.Add("Error", Validacion.ValidarVacio(ex.ToString()));
                 Response.Redirect("..\\Default\\Error.aspx");
             }
         }

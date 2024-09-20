@@ -72,8 +72,35 @@
     <Content Include="Default\Error.aspx" />
     <Content Include="Default\Home.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Home\assets\favicon.ico" />
+    <Content Include="Home\assets\img\about\1.jpg" />
+    <Content Include="Home\assets\img\about\2.jpg" />
+    <Content Include="Home\assets\img\about\3.jpg" />
+    <Content Include="Home\assets\img\about\4.jpg" />
+    <Content Include="Home\assets\img\close-icon.svg" />
+    <Content Include="Home\assets\img\header-bg.jpg" />
+    <Content Include="Home\assets\img\logos\facebook.svg" />
+    <Content Include="Home\assets\img\logos\google.svg" />
+    <Content Include="Home\assets\img\logos\ibm.svg" />
+    <Content Include="Home\assets\img\logos\microsoft.svg" />
+    <Content Include="Home\assets\img\map-image.png" />
+    <Content Include="Home\assets\img\navbar-logo.svg" />
+    <Content Include="Home\assets\img\portfolio\1.jpg" />
+    <Content Include="Home\assets\img\portfolio\2.jpg" />
+    <Content Include="Home\assets\img\portfolio\3.jpg" />
+    <Content Include="Home\assets\img\portfolio\4.jpg" />
+    <Content Include="Home\assets\img\portfolio\5.jpg" />
+    <Content Include="Home\assets\img\portfolio\6.jpg" />
+    <Content Include="Home\assets\img\team\1.jpg" />
+    <Content Include="Home\assets\img\team\2.jpg" />
+    <Content Include="Home\assets\img\team\3.jpg" />
+    <Content Include="Home\css\styles.css" />
+    <Content Include="Home\js\scripts.js" />
+    <Content Include="Home\VerDetalle.aspx" />
     <Content Include="Login\Login.aspx" />
     <Content Include="Login\Register.aspx" />
+    <Content Include="Home\assets\img\logos\noname.png" />
+    <Content Include="Home\Inicio.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -108,12 +135,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Home.Master.cs">
-      <DependentUpon>Home.Master</DependentUpon>
+    <Compile Include="Home1.Master.cs">
+      <DependentUpon>Home1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Home.Master.designer.cs">
-      <DependentUpon>Home.Master</DependentUpon>
+    <Compile Include="Home1.Master.designer.cs">
+      <DependentUpon>Home1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Home\VerDetalle.aspx.cs">
+      <DependentUpon>VerDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\VerDetalle.aspx.designer.cs">
+      <DependentUpon>VerDetalle.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -137,10 +171,17 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="Home\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Validacion.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Home.Master" />
+    <Content Include="Home1.Master" />
     <None Include="packages.config" />
     <Content Include="Site.Master" />
     <None Include="Web.Debug.config">

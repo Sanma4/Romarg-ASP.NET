@@ -11,7 +11,7 @@ namespace Romarg_proyect
 {
 
 
-    public partial class Home
+    public partial class Home1
     {
 
         /// <summary>

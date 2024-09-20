@@ -18,7 +18,7 @@ namespace Romarg_proyect.Default
             VinosNegocio negocio = new VinosNegocio();
             try
             {
-                ListaVinos = negocio.ListarSP();
+                ListaVinos = negocio.Listar();
                 if (IsPostBack)
                 {
                     //repRepetidor.DataSource = negocio.ListarSP();

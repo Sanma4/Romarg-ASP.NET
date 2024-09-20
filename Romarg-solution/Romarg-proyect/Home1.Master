@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="Romarg_proyect.Home" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home1.Master.cs" Inherits="Romarg_proyect.Home" %>
 
 <!DOCTYPE html>
 
@@ -40,4 +40,9 @@
         </div>
     </form>
 </body>
+    <hr />
+<footer>
+    <h5 style="font-size: 20px; text-align: center; font-weight: bold;">Todos los derechos reservados - ROMARG</h5>
+    <h6 style="font-size: 15px; text-align: center; font-weight: bold;">Copyright 2024 ©</h6>
+</footer>
 </html>
