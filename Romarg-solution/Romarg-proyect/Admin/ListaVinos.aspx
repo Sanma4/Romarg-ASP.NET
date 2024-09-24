@@ -16,7 +16,6 @@
             <asp:CommandField HeaderText="Acciones" ShowSelectButton="true" SelectText="✍️" />
         </Columns>
     </asp:GridView>
-
     <asp:GridView runat="server" ID="dgvPrueba" CssClass="table" AutoGenerateColumns="false">
         <Columns>
             <asp:BoundField HeaderText="Bodega" DataField="bodega.Nombre" />

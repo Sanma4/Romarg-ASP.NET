@@ -16,7 +16,7 @@
             </div>
             <div class="mb-3">
                 <label for="txtDescripcion" class="form-label">Descripcion</label>
-                <asp:TextBox ID="txtDescripcion" CssClass="form-control" type="text-area" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtDescripcion" CssClass="form-control" TextMode="MultiLine" runat="server"></asp:TextBox>
             </div>
             <div class="mb-3">
                 <label for="ddlTipo" class="form-label">Tipo</label>

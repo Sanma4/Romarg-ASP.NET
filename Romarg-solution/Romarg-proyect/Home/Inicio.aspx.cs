@@ -24,7 +24,7 @@ namespace Romarg_proyect.startbootstrap_agency_gh_pages
 
         protected void btnVerDetalle_Click(object sender, EventArgs e)
         {
-            string id = ((Button)sender).CommandArgument;
+            string id = ((LinkButton)sender).CommandArgument;
             Response.Redirect("VerDetalle.aspx?id=" + id);
         }
 
